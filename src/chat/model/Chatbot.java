@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 /**
  * Base version of the 2015 Chatbot class. Only stub methods are provided.
- * Students will complete methods as part * of the project. * @author Cody
- * Henrichsen * @version 1.0 10/14/15
+ * Students will complete methods as part * of the project. 
+ * * @author Duncan Nguyen
+ *  * @version 1.0 10/14/16
  */
 public class Chatbot
 {
@@ -23,11 +24,27 @@ public class Chatbot
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = new String(userName);
-		this.
+		this.content = new String("Duncan Nguyen");
 	}
 
 	private void buildMemesList()
 	{
+		memesList.add("dog");
+		memesList.add("cute animals");
+		memesList.add("grumpy cat");
+		memesList.add("dat boi");
+		memesList.add("willy wonka");
+		memesList.add("harmbre");
+		memesList.add("john cena");
+		memesList.add("pope");
+		memesList.add("ken bone");
+		memesList.add("Spongebob Squarepants");
+		memesList.add("pepe");
+		memesList.add("boy and girl");
+		memesList.add("danny phantom");
+		memesList.add("Anime");
+		memesList.add("star wars troopers aiming");
+		
 	}
 
 	private void buildPoliticalTopicsList()
@@ -90,7 +107,7 @@ public class Chatbot
 	 */
 	public String getUserName()
 	{
-		return null;
+		return userName;
 	}
 
 	/**
@@ -99,7 +116,7 @@ public class Chatbot
 	 */
 	public String getContent()
 	{
-		return null;
+		return content;
 	}
 
 	/**
@@ -117,7 +134,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return null;
+		return politicalTopicList;
 	}
 
 	/**
