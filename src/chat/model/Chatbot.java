@@ -43,7 +43,10 @@ public class Chatbot
 		memesList.add("boy and girl");
 		memesList.add("danny phantom");
 		memesList.add("Anime");
-		memesList.add("star wars troopers aiming");
+		memesList.add("star wars stormtroopers");
+		memesList.add("School");
+		memesList.add("Teachers");
+		memesList.add("Autocorrect");
 		
 	}
 
@@ -58,7 +61,14 @@ public class Chatbot
 	 */
 	public boolean lengthChecker(String currentInput)
 	{
-		return false;
+		boolean hasLength = false;
+		
+		if(currentInput != null && currentInput.length() > 0)
+		{
+			hasLength = true;
+		}
+		
+		return hasLength;
 	}
 
 	/**
