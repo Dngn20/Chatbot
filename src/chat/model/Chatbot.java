@@ -23,7 +23,7 @@ public class Chatbot
 	{
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
-		this.userName = new String(userName);
+		this.userName = userName;
 		this.content = new String("Duncan Nguyen");
 	}
 
@@ -109,7 +109,7 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return ;
+		return false;
 	}
 
 	/**
