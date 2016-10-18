@@ -52,6 +52,7 @@ public class Chatbot
 
 	private void buildPoliticalTopicsList()
 	{
+	
 	}
 
 	/**
@@ -108,7 +109,7 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		return ;
 	}
 
 	/**
@@ -153,6 +154,7 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
+		this.content = content;
 	}
 
 }
