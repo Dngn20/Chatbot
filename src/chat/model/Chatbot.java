@@ -14,6 +14,7 @@ public class Chatbot
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
+	
 
 	/**
 	 * * Creates an instance of the Chatbot with the supplied username. * @param
@@ -24,17 +25,21 @@ public class Chatbot
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
-		this.content = new String("Duncan Nguyen");
+		this.content = new String("Green");
+		this.buildMemesList();
+		this.buildPoliticalTopicsList();
+		
+		
 	}
 
 	private void buildMemesList()
 	{
-		memesList.add("dog");
+		memesList.add("doge");
 		memesList.add("cute animals");
 		memesList.add("grumpy cat");
 		memesList.add("dat boi");
 		memesList.add("willy wonka");
-		memesList.add("harmbre");
+		memesList.add("harambe");
 		memesList.add("john cena");
 		memesList.add("pope");
 		memesList.add("ken bone");
@@ -42,7 +47,7 @@ public class Chatbot
 		memesList.add("pepe");
 		memesList.add("boy and girl");
 		memesList.add("danny phantom");
-		memesList.add("Anime");
+		memesList.add("ICUP");
 		memesList.add("star wars stormtroopers");
 		memesList.add("School");
 		memesList.add("Teachers");
@@ -52,7 +57,27 @@ public class Chatbot
 
 	private void buildPoliticalTopicsList()
 	{
-	
+		politicalTopicList.add("Democrat");
+		politicalTopicList.add("Republican");
+		politicalTopicList.add("11/8/16");
+		politicalTopicList.add("liberal");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("Clinton");
+		politicalTopicList.add("Trump");
+		politicalTopicList.add("Kaine");
+		politicalTopicList.add("Pence");
+		politicalTopicList.add("Stein");
+		politicalTopicList.add("Johnson");
+		politicalTopicList.add("election");
+		politicalTopicList.add("Jackson");
+		politicalTopicList.add("Madison");
+		politicalTopicList.add("Adams");
+		politicalTopicList.add("Washington");
+		politicalTopicList.add("Obama");
+		politicalTopicList.add("JFK");
+		
+		
+		
 	}
 
 	/**
@@ -82,7 +107,13 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		boolean hasContent = false;
+		
+		if (currentInput != null && currentInput.contains("Green"))
+			
+			hasContent = true;
+				
+			return hasContent;
 	}
 
 	/**
