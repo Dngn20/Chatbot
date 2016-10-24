@@ -62,6 +62,7 @@ public class Chatbot
 		politicalTopicList.add("11/8/16");
 		politicalTopicList.add("liberal");
 		politicalTopicList.add("conservative");
+		politicalTopicList.add("Hillary");
 		politicalTopicList.add("Clinton");
 		politicalTopicList.add("Trump");
 		politicalTopicList.add("Kaine");
@@ -109,9 +110,10 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		if (currentInput != null && currentInput.contains("Green"))
-			
+		if(currentInput.contains(content))
+		{
 			hasContent = true;
+		}
 				
 			return hasContent;
 	}
@@ -127,7 +129,18 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean hasTopic = false;
+		int index;
+		
+		for(index = 0; index < 18; index++)
+		{
+			if(currentInput.equals(politicalTopicList.get(index)))
+			{
+				hasTopic = true;
+			}
+				
+		}
+		return hasTopic;
 	}
 
 	/**
@@ -137,10 +150,24 @@ public class Chatbot
 	 * @param currentInput
 	 *            The supplied String to be checked. * @return Whether the
 	 *            supplied String is a recognized meme.
+	 *            loop
+	 *            if
+	 *            .get()
+	 *            equals
 	 */
 	public boolean memeChecker(String currentInput)
-	{
-		return false;
+	{	
+		boolean hasMeme = false;
+		int index;
+		
+		for(index = 0; index < 18; index++)
+		{
+			if(currentInput.equals(memesList.get(index)))
+			{
+				hasMeme = true;
+			}
+		}
+		return hasMeme;
 	}
 
 	/**
