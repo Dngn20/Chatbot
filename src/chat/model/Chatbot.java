@@ -110,7 +110,7 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		if(currentInput.contains(content))
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent = true;
 		}
@@ -130,9 +130,12 @@ public class Chatbot
 	public boolean politicalTopicChecker(String currentInput)
 	{
 		boolean hasTopic = false;
-		int index;
 		
-		for(index = 0; index < 18; index++)
+		String temp = "⇅";
+		System.out.println(temp);
+		
+		
+		for(int index = 0; index < politicalTopicList.size(); index++)
 		{
 			if(currentInput.equals(politicalTopicList.get(index)))
 			{
@@ -158,9 +161,9 @@ public class Chatbot
 	public boolean memeChecker(String currentInput)
 	{	
 		boolean hasMeme = false;
-		int index;
+	
 		
-		for(index = 0; index < 18; index++)
+		for(int index = 0; index < memesList.size(); index++)
 		{
 			if(currentInput.equals(memesList.get(index)))
 			{
@@ -169,7 +172,36 @@ public class Chatbot
 		}
 		return hasMeme;
 	}
-
+	
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean keyboardMash = false;
+		
+		if(currentInput.equals("sdf"))
+		{
+			keyboardMash = true ;
+		}
+	
+		if(currentInput.equals("dfg"))
+		{
+				keyboardMash = true;
+		}
+		if(currentInput.equals("cvb"))
+		{
+			keyboardMash = true;
+		}
+		if(currentInput.equals(",./"))
+		{
+			keyboardMash = true;
+		}
+		return keyboardMash;
+	}
+	
+	public boolean twitterChecker(String currentInput)
+	{
+		boolean twitterChecker = false;
+		return twitterChecker;
+	}
 	/**
 	 * * Returns the username of this Chatbot instance. * @return The username
 	 * of the Chatbot.

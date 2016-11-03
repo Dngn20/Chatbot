@@ -10,7 +10,7 @@ public class ChatViewer
 	
 	public ChatViewer()
 	{
-		windowMessage = "This is ChatBot";
+		windowMessage = "This is your ChatBot";
 		chatIcon = new ImageIcon(getClass().getResource("images/stop_button-128.png"));
 		
 		
