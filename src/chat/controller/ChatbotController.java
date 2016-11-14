@@ -2,6 +2,7 @@ package chat.controller;
 
 import chat.view.ChatViewer;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
 
 public class ChatbotController
 {
