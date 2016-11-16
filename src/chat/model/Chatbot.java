@@ -197,11 +197,38 @@ public class Chatbot
 		return keyboardMash;
 	}
 	
+	public boolean inputHTMLChecker(String currentInput)
+	{
+		boolean inputHTML = false;
+		if(currentInput.equals("<B>"))
+		{
+			int index = currentInput.indexOf("<B>") + 3;
+			String sub = currentInput.substring(index);
+				
+			if(sub.contains("<B>"))
+			{
+				inputHTML = true;
+			}
+		}
+		else if(currentInput.contains("<I>"))
+		{
+			int index = currentInput.indexOf("<I>") + 3;
+			String sub = currentInput.substring(index);
+			
+			if(sub.contains("<I>"))
+			{
+				inputHTML = true;
+			}
+		}
+		
+		return inputHTML;
+	}
+	
 	public boolean twitterChecker(String currentInput)
 	{
-		boolean twitterChecker = false;
-		
-		return twitterChecker;
+		boolean twitter = false;
+			
+		return twitter;
 	}
 	
 
@@ -250,6 +277,7 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+	
 	public boolean quitChecker(String currentInput)
 	{
 		boolean quit = false;
