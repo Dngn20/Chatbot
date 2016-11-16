@@ -200,8 +200,12 @@ public class Chatbot
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean twitterChecker = false;
+		
 		return twitterChecker;
 	}
+	
+
+	
 	/**
 	 * * Returns the username of this Chatbot instance. * @return The username
 	 * of the Chatbot.
@@ -246,5 +250,16 @@ public class Chatbot
 	{
 		this.content = content;
 	}
-
+	public boolean quitChecker(String currentInput)
+	{
+		boolean quit = false;
+		
+		if(currentInput.equals("quit"))
+		{
+			quit = true;
+		}
+		
+		return quit;
+	}
+	
 }

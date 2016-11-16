@@ -8,24 +8,27 @@ public class ChatbotController
 {
 	private Chatbot stupidBot; 
 	private ChatViewer chatView;
+	private ChatFrame baseFrame;
 	
 	public ChatbotController() 
 	{
 		stupidBot= new Chatbot("Bob");
 		chatView = new ChatViewer();
+		baseFrame = new ChatFrame(this);
 	}
 	
 	public void start()
 	{
-		String response = "Hello";
-		
-		while(stupidBot.lengthChecker(response))
-		{
-			chatView.displayMessage(useChatbotCheckers(response));
-			response = chatView.collectResponse("What do you want to chat about today?");
-		}		
+//		String response = "Hello";
+//		
+//		while(stupidBot.lengthChecker(response))
+//		{
+//			chatView.displayMessage(useChatbotCheckers(response));
+//			response = chatView.collectResponse("What do you want to chat about today?");
+//		}		
 	}	
-	private String useChatbotCheckers(String input)
+
+	public String useChatbotCheckers(String input)
 	{
 		String answer ="";
 				
@@ -38,14 +41,14 @@ public class ChatbotController
 			answer += "\nI can has memes?\n";
 		}
 		
-		if(answer.length() == 0)
+		if(!stupidBot.lengthChecker(answer))
 		{
 			answer +="Sorry, I don't know about " + input;
 		}
 			
 		return answer;
 	}	
-
+	
 }	
 	
 

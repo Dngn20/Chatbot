@@ -53,12 +53,29 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, chatButton, -138, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatField, 32, SpringLayout.SOUTH, chatDisplay);
 		baseLayout.putConstraint(SpringLayout.EAST, chatField, -65, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatbotButton, 0, SpringLayout.WEST, chatButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatbotButton, -6, SpringLayout.NORTH, chatDisplay);
 		
 	}
 	
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent Click)
+			{
+				String userWords = chatField.getText();
+				String botResponse = baseController.useChatbotCheckers(userWords);
+				
+				chatDisplay.setText("You said " + userWords + "\n" + "Chatbot said :" + botResponse);
+				chatField.setText("");
+			}
+			
+			
+		});
 	}
+
+
+
 
 }
