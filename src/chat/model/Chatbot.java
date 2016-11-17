@@ -215,11 +215,17 @@ public class Chatbot
 			int index = currentInput.indexOf("<I>") + 3;
 			String sub = currentInput.substring(index);
 			
-			if(sub.contains("<I>"))
+			if(sub.contains("</i>"))
 			{
 				inputHTML = true;
 			}
 		}
+		else if(currentInput.contains("<P>"))
+		{
+				inputHTML = true;			
+		}
+
+				
 		
 		return inputHTML;
 	}
