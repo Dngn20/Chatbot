@@ -45,10 +45,29 @@ public class ChatbotController
 		{
 			answer +="Sorry, I don't know about " + input;
 		}
-			
+		int canBeRandom = (int) (Math.random() * 7);
+		if(canBeRandom % 2 == 0)
+		{
+			answer += randomTopicGenerator();
+		}
 		return answer;
 	}	
 	
+	private String randomTopicGenerator()
+	{
+		String randomTopic = "";
+		int random = (int) (Math.random() * 7);
+		
+		switch(random)
+		{
+			case 0:
+				randomTopic = "Did you know you have a face?";
+				break;
+			case 1:
+				randomTopic = "I like to talk to you";
+				break;
+		}
+			return randomTopic; 
+	}
 }	
-	
 
