@@ -251,31 +251,35 @@ public class Chatbot
 		if(currentInput.contains("#"))
 		{
 			int index = currentInput.indexOf("#");
-			String sub = currentInput.substring(index);
+			String sub = currentInput.substring(index + 1);
 			
-			if(sub.contains("#"))
+			if(index == 0)
 			{
-				twitter = true;
-			}
-			
-			else if(currentInput.contains("@"));
-			{
-				int index2 = currentInput.indexOf("@");
-				String sub2 = currentInput.substring(index2);
-				
-				if(sub2.contains("@"))
+				if(sub.length() >= 1)
 				{
 					twitter = true;
 				}
 			}
 			
-			
-			
 		}
-			
+			else if(currentInput.contains("@"));
+			{
+				int index = currentInput.indexOf("@");
+				String sub = currentInput.substring(index +1);
+				
+				if(index ==0)
+				{
+					if(sub.length() >- 1)
+					{
+						twitter = true;
+					}
+				}
+				
+			}
+			return twitter;
+
+		}
 		
-		return twitter;
-	}
 	
 
 	
