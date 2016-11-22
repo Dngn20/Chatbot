@@ -32,23 +32,31 @@ public class ChatbotController
 	{
 		String answer ="";
 				
-		if(stupidBot.contentChecker(input))
+		if(!stupidBot.quitChecker(input))
 		{
-			answer += "\nYou know my specail secret\n";
-		}
-		if(stupidBot.memeChecker(input))
-		{
-			answer += "\nI can has memes?\n";
-		}
+			if(stupidBot.contentChecker(input))
+			{
+				answer += "\nYou know my specail secret\n";
+			}
+			if(stupidBot.memeChecker(input))
+			{
+				answer += "\nI can has memes?\n";
+			}
 		
-		if(!stupidBot.lengthChecker(answer))
-		{
-			answer +="Sorry, I don't know about " + input;
+			if(!stupidBot.lengthChecker(answer))
+			{
+				answer +="Sorry, I don't know about " + input;
+			}
+			int canBeRandom = (int) (Math.random() * 7);
+			if(canBeRandom % 2 == 0)
+			{
+				answer += randomTopicGenerator();
+			}
 		}
-		int canBeRandom = (int) (Math.random() * 7);
-		if(canBeRandom % 2 == 0)
+		else
 		{
-			answer += randomTopicGenerator();
+			chatView.displayMessage("Thanks for talking with me");
+			System.exit(0);
 		}
 		return answer;
 	}	
