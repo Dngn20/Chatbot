@@ -4,13 +4,13 @@ import chat.view.ChatViewer;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 
-public class ChatbotController
+public class ChatController
 {
 	private Chatbot stupidBot; 
 	private ChatViewer chatView;
 	private ChatFrame baseFrame;
 	
-	public ChatbotController() 
+	public ChatController() 
 	{
 		stupidBot= new Chatbot("Bob");
 		chatView = new ChatViewer();
@@ -76,6 +76,16 @@ public class ChatbotController
 				break;
 		}
 			return randomTopic; 
+	
+	}
+	public Chatbot getChatbot()
+	{
+		return stupidBot;
+	}
+	
+	public ChatFrame getBaseFrame()
+	{
+		return baseFrame;
 	}
 }	
 

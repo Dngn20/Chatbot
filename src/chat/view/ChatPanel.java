@@ -2,14 +2,14 @@ package chat.view;
 
 import javax.swing.*;
 import java.awt.Color;
-import chat.controller.ChatbotController;
+import chat.controller.ChatController;
 import java.awt.event.ActionListener;
 import javax.swing.SpringLayout;
 import java.awt.event.ActionEvent;
 
 public class ChatPanel extends JPanel
 {
-	private ChatbotController baseController;
+	private ChatController baseController;
 	private JButton chatButton;
 	private JTextArea chatDisplay;
 	private JTextField chatField;
@@ -18,7 +18,7 @@ public class ChatPanel extends JPanel
 	
 	
 	
-	public ChatPanel(ChatbotController baseController)
+	public ChatPanel(ChatController baseController)
 	{
 		super();
 		this.baseController = baseController;

@@ -15,7 +15,7 @@ public class ChatFrameTest
 	@Before
 	public void setUp() throws Exception
 	{
-		baseFrame = new ChatFrame(new ChatbotController());
+		baseFrame = new ChatFrame(new ChatController());
 	}
 
 	@After
