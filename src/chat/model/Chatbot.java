@@ -31,7 +31,10 @@ public class Chatbot
 		
 		
 	}
-
+	/**
+	 * Adds memes to the lists
+	 */
+	
 	private void buildMemesList()
 	{
 		memesList.add("doge");
@@ -55,6 +58,9 @@ public class Chatbot
 		
 	}
 
+	/**
+	 * Adds political topics to the PoliticalTopicsLists
+	 */
 	private void buildPoliticalTopicsList()
 	{
 		politicalTopicList.add("Democrat");
@@ -172,7 +178,11 @@ public class Chatbot
 		}
 		return hasMeme;
 	}
-	
+	/**
+	 * Checks to see if the user is keyboard mashing in the current input
+	 * @param currentInput is checked 
+	 * @return 
+	 */
 	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean keyboardMash = false;
@@ -200,51 +210,109 @@ public class Chatbot
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean inputHTML = false;
-		if(currentInput.contains("<B>"))
+		if(currentInput.contains("<P>"))
 		{
-			int index = currentInput.indexOf("<B>") + 3;
+			inputHTML = true;
+		}
+		else if(currentInput.contains("<A HREF> </a>"))
+		{
+			int index = currentInput.indexOf("<A HREF> </a>") + 9;
 			String sub = currentInput.substring(index);
+		}
+		
 				
-			if(sub.contains("</B>"))
-			{
-				inputHTML = true;
-			}
-		}
-		else if(currentInput.contains("<I>"))
-		{
-			int index = currentInput.indexOf("<I>") + 3;
-			String sub = currentInput.substring(index);
-			
-			if(sub.contains("</i>"))
-			{
-				inputHTML = true;
-			}
-		}
-		else if(currentInput.contains("<P>"))
-		{
-				inputHTML = true;			
-		}
-		else if (currentInput.contains("A HREF=\""))
-		{
-			int index = currentInput.indexOf("A HREF=\"") + 9;
-			String sub = currentInput.substring(index);
-			
-			if(sub.contains("\">"))
-			{
-				int index2 = sub.indexOf("\">");
-				String sub2 = sub.substring(index2);
-				
-			}
-				if(sub.contains("</a>"))
-				{
-					inputHTML = true;
-				}
-			
-		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		if(currentInput.contains("<B>"))
+//		{
+//			int index = currentInput.indexOf("<B>") + 3;
+//			String sub = currentInput.substring(index);
+//				
+//			if(sub.contains("</B>"))
+//			{
+//				inputHTML = true;
+//			}
+//		}
+//		else if(currentInput.contains("<I>"))
+//		{
+//			int index = currentInput.indexOf("<I>") + 3;
+//			String sub = currentInput.substring(index);
+//			
+//			if(sub.contains("</i>"))
+//			{
+//				inputHTML = true;
+//			}
+//		}
+//		else if(currentInput.contains("<P>"))
+//		{
+//				inputHTML = true;			
+//		}
+//		else if (currentInput.contains("A HREF=\""))
+//		{
+//			int index = currentInput.indexOf("A HREF=\"") + 9;
+//			String sub = currentInput.substring(index);
+//			
+//			if(sub.contains("\">"))
+//			{
+//				int index2 = sub.indexOf("\">");
+//				String sub2 = sub.substring(index2);
+//				
+//			}
+//				if(sub.contains("</a>"))
+//				{
+//					inputHTML = true;
+//				}
+//			
+//		}
 		
 		return inputHTML;
 	}
-	
+	/**
+	 * Checks to see the current input is a twitter thing
+	 * @param currentInput
+	 * @return
+	 */
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean twitter = false;

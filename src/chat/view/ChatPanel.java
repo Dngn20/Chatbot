@@ -17,7 +17,10 @@ public class ChatPanel extends JPanel
 	private JButton chatbotButton;
 	
 	
-	
+	/**
+	 * Sets up the panel 
+	 * @param baseController
+	 */
 	public ChatPanel(ChatController baseController)
 	{
 		super();
@@ -34,7 +37,9 @@ public class ChatPanel extends JPanel
 		
 		
 	}
-	
+	/**
+	 * This sets up the panel and it's objects 
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
@@ -44,7 +49,9 @@ public class ChatPanel extends JPanel
 		this.add(chatField);
 		this.add(chatbotButton);
 	}
-
+	/**
+	 * Sets up the layout of the panel to make sure the objects are at the right place
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatDisplay, -163, SpringLayout.SOUTH, this);
@@ -57,7 +64,9 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatbotButton, -6, SpringLayout.NORTH, chatDisplay);
 		
 	}
-	
+	/**
+	 * Sets up the Listeners for the actions of the panel
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
