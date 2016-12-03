@@ -8,7 +8,10 @@ public class ChatFrame extends JFrame
 {
 	private ChatController baseController;
 	private ChatPanel appPanel;
-
+	/**
+	 * This gets the ChatPanel and it's info and adde
+	 * @param baseController
+	 */
 	public ChatFrame(ChatController baseController)
 	{
 		super();
@@ -16,7 +19,9 @@ public class ChatFrame extends JFrame
 		appPanel = new ChatPanel(baseController);
 		setupFrame();
 	}
-	
+	/**
+	 * Set up the whole frame for the chatbot and it's conditional
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);

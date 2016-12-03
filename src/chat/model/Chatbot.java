@@ -209,61 +209,48 @@ public class Chatbot
 	
 	public boolean inputHTMLChecker(String currentInput)
 	{
-		boolean inputHTML = false;
-		if(currentInput.contains("<P>"))
-		{
-			inputHTML = true;
-		}
-		else if(currentInput.contains("<A HREF> </a>"))
-		{
-			int index = currentInput.indexOf("<A HREF> </a>") + 9;
-			String sub = currentInput.substring(index);
-		}
 		
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		 boolean inputHTML = false;
+	        
+	        if(currentInput.contains("<P>"))
+	        {
+	            inputHTML = true;
+	        }    
+	        else if(currentInput.contains("<A HREF=\""))
+	        {
+	            int index = currentInput.indexOf("<A HREF=\"") + 9;
+	            String sub = currentInput.substring(index);
+	            
+	            if(sub.contains("\">"))
+	            {
+	                int index2 = sub.indexOf("\">");
+	                String sub2 = sub.substring(index2);
+	                
+	                if(sub2.contains(" </a>"))
+	                {
+	                    inputHTML = true;
+	                }
+	            }
+	        }
+	        else if(currentInput.contains("<"))
+	        {
+	            String lower = currentInput.toLowerCase();
+	            int openIndex1 = lower.indexOf("<") + 1;
+	            String tag = "";
+	            if(lower.contains(">"))
+	            {
+	                int openIndex2 = lower.indexOf(">");
+	                tag = lower.substring(openIndex1, openIndex2);
+	                
+	                String sub = lower.substring(openIndex2 + 1);
+	                
+	                if(sub.contains("</" + tag + ">"))
+	                {
+	                    inputHTML = true;
+	                }    
+	            }            
+	        }
+
 //		if(currentInput.contains("<B>"))
 //		{
 //			int index = currentInput.indexOf("<B>") + 3;
@@ -395,7 +382,11 @@ public class Chatbot
 	{
 		this.content = content;
 	}
-	
+	/**
+	 * This checks if the current input says quit 
+	 * @param currentInput quit
+	 * @return 
+	 */
 	public boolean quitChecker(String currentInput)
 	{
 		boolean quit = false;
